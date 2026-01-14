@@ -14,7 +14,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <style>
     :root {
       --bg: #0f172a;
@@ -37,11 +36,6 @@
       line-height: 1.6;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
     header {
       padding: 80px 20px;
       text-align: center;
@@ -50,12 +44,6 @@
     header h1 {
       font-size: 3rem;
       font-weight: 700;
-    }
-
-    header p {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      color: var(--muted);
     }
 
     .container {
@@ -85,6 +73,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
       gap: 16px;
+      margin-top: 25px;
     }
 
     .skill {
@@ -95,29 +84,6 @@
       font-weight: 500;
     }
 
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .project {
-      background: var(--card);
-      padding: 24px;
-      border-radius: 18px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-    }
-
-    .project p {
-      color: var(--muted);
-      margin-bottom: 14px;
-    }
-
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -125,7 +91,7 @@
       color: var(--muted);
     }
 
-    /* 🔹 SOCIAL ICONS */
+    /* 🔹 CONTACT ICONS – SMOOTH ANIMATION */
     .links {
       text-align: center;
     }
@@ -134,6 +100,7 @@
       margin: 0 14px;
       font-size: 26px;
       color: var(--accent);
+      display: inline-block;
       transition: transform 0.3s ease, color 0.3s ease;
     }
 
@@ -141,75 +108,143 @@
       transform: scale(1.25);
       color: white;
     }
+
+    /* WhatsApp green hover */
+    .links a:hover .fa-whatsapp {
+      color: #25D366;
+    }
+
+    /* ----------------- TYPING ANIMATION ----------------- */
+    .typing {
+      display: inline;
+      border-right: 2px solid var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% { border-color: var(--accent); }
+      25%, 75% { border-color: transparent; }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <header>
-    <img src="profile.jpg" alt="Md Waliullah"
-      style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #38bdf8;margin-bottom:20px;
-      transition:transform 0.3s ease, box-shadow 0.3s ease;"
-      onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 0 25px rgba(56,189,248,0.6)'"
-      onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none'" />
+<header>
+  <img src="profile.jpg" alt="Md Waliullah"
+    style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #38bdf8;margin-bottom:20px;" />
 
-    <h1>Md Waliullah</h1>
-    <p>Data Analyst | Excel • SQL • Python</p>
+  <h1>Md Waliullah</h1>
 
-    <div style="margin-top:20px;">
-      <a href="Resume.pdf"
-        style="display:inline-block;padding:12px 24px;border-radius:30px;background:#38bdf8;color:#020617;font-weight:600;">
-        Download Resume
+  <!-- Typing Animation -->
+  <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:#38bdf8;">
+    <span class="typing" id="typing-text"></span>
+  </p>
+
+  <p style="margin-top:6px;font-size:1rem;color:#9ca3af;">
+    MS Excel • SQL • Python • Power BI
+  </p>
+
+  <div style="margin-top:20px;">
+    <a href="Resume.pdf" download
+      style="display:inline-block;padding:12px 24px;border-radius:30px;background:#38bdf8;color:#020617;font-weight:600;">
+      Download Resume
+    </a>
+  </div>
+</header>
+
+<div class="container">
+
+  <section>
+    <h2>About Me</h2>
+    <div class="about">
+      <p>
+        I am a Data Analyst with a background in Statistics, passionate about turning raw data into meaningful insights.
+        I work with Excel, SQL, and Python to clean, analyze, and visualize data to support better business decisions.
+        This portfolio is continuously evolving as I build and refine new data projects.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools & Skills</h2>
+
+    <div class="about">
+      <p><strong>Data Analysis:</strong> Excel, SQL, Python</p>
+      <p><strong>Python Libraries:</strong> Pandas, NumPy, Matplotlib</p>
+      <p><strong>Databases:</strong> MySQL, PostgreSQL</p>
+      <p><strong>Visualization:</strong> Power BI, Excel Charts</p>
+      <p><strong>Tools:</strong> Jupyter Notebook, GitHub</p>
+    </div>
+
+    <div class="skills">
+      <div class="skill">Python</div>
+      <div class="skill">SQL</div>
+      <div class="skill">Excel</div>
+      <div class="skill">Power BI</div>
+      <div class="skill">Pandas</div>
+      <div class="skill">MySQL</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <div class="about links">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/917870327179" target="_blank" aria-label="WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:mdwaliullahkhan868@gmail.com">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/wali-xp" target="_blank">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <!-- GitHub -->
+      <a href="https://github.com/wali-xp" target="_blank">
+        <i class="fa-brands fa-github"></i>
       </a>
     </div>
-  </header>
 
-  <div class="container">
+    <p style="text-align:center;margin-top:12px;color:#9ca3af;">
+      💬 WhatsApp: +917870327179
+    </p>
+  </section>
 
-    <section>
-      <h2>About Me</h2>
-      <div class="about">
-        <p>
-          I am a Data Analyst with a background in Statistics, passionate about turning raw data into meaningful insights.
-          I work with Excel, SQL, and Python to clean, analyze, and visualize data to support better business decisions.
-          “This portfolio is continuously evolving as I build and refine new data projects.”
-        </p>
-      </div>
-    </section>
+</div>
 
-    <section>
-      <h2>Tools & Skills</h2>
-      <div class="skills">
-        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40"><br>Python</div>
-        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40"><br>MySQL</div>
-        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40"><br>SQL</div>
-        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" width="40"><br>Pandas</div>
-        <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" width="40"><br>Jupyter</div>
-        <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" width="40"><br>Excel</div>
-        <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" width="40"><br>Power BI</div>
-      </div>
-    </section>
+<footer>
+  © 2026 Md Waliullah • Data Analyst Portfolio
+</footer>
 
-    <section>
-      <h2>Contact</h2>
-      <div class="about links">
-        <a href="mailto:mdwaliullahkhan868@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/wali-xp" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="https://github.com/wali-xp" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-      </div>
-    </section>
+<!-- Typing Animation Script -->
+<script>
+const text = "Data Analyst"; // Text to type
+const typingText = document.getElementById("typing-text");
+let i = 0;
 
-  </div>
+function type() {
+  if (i < text.length) {
+    typingText.innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 150); // typing speed (ms)
+  }
+}
 
-  <footer>
-    © 2026 Md Waliullah • Data Analyst Portfolio
-  </footer>
+type();
+</script>
 
 </body>
 </html>
