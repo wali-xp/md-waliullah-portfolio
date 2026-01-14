@@ -27,7 +27,7 @@
     header { padding: 80px 20px; text-align: center; }
     h2 { font-size: 1.8rem; margin-bottom: 25px; border-left: 4px solid var(--accent); padding-left: 15px; }
 
-    .about-box { background: var(--card); padding: 25px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 20px; transition: 0.3s; }
+    .about-box { background: var(--card); padding: 25px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
 
     /* Motion Effect */
     .motion-card {
@@ -38,18 +38,20 @@
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     
-    /* Education specific styling */
-    .edu-card { border-left: 2px solid rgba(56, 189, 248, 0.3); padding-left: 20px; margin-bottom: 15px; }
-    .edu-year { font-size: 0.85rem; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 5px; display: block; }
-
     /* Skill Bars */
     .skill-container { margin-bottom: 20px; }
     .skill-name { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
     .bar-bg { background: rgba(156, 163, 175, 0.1); height: 10px; border-radius: 10px; overflow: hidden; }
     .bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1.5s ease-in-out; }
 
+    /* Education Blocks */
+    .edu-block { padding: 15px 0; border-bottom: 1px solid rgba(156, 163, 175, 0.1); }
+    .edu-block:last-child { border-bottom: none; }
+    .edu-tag { font-size: 0.75rem; background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 8px; display: inline-block; }
+
     #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 15px; cursor: pointer; border-radius: 30px; border: 1px solid var(--accent); background: var(--card); color: var(--text); font-weight: 600; }
     .typing { border-right: 2px solid var(--accent); white-space: nowrap; }
+    footer { text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid rgba(156,163,175,0.1); }
   </style>
 </head>
 <body>
@@ -60,8 +62,7 @@
   <img src="profile.jpg" alt="Md Waliullah" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);margin-bottom:20px;box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
   <h1>Md Waliullah</h1>
   <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:var(--accent);"><span class="typing" id="typing-text"></span></p>
-  <p style="margin-top:6px;font-size:1rem;color:var(--muted);">Mathematics (Hons.) • Data Analyst</p>
-
+  
   <div style="margin-top:25px;">
     <a href="Resume.pdf" download style="display:inline-block;padding:12px 28px;border-radius:30px;background:var(--accent);color:#fff;font-weight:700;text-decoration:none;transition: 0.3s;box-shadow: 0 4px 15px rgba(56, 189, 248, 0.4);">
       DOWNLOAD RESUME <i class="fa-solid fa-download" style="margin-left: 8px;"></i>
@@ -72,22 +73,49 @@
 <div class="container">
   
   <section>
-    <h2>Expertise & Tools</h2>
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p style="font-size: 1.1rem; line-height: 1.8;">
+        I am a <strong style="color: var(--accent);">Data Analyst with a background in Mathematics (Hons.) and Statistics</strong>. 
+        I specialize in turning complex data into actionable business insights using SQL, Python, and Excel.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <h2>My Expertise</h2>
     <div class="grid">
-      <div class="about-box">
-        <div class="skill-container">
-          <div class="skill-name"><span>MS Excel</span><span>90%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-        </div>
-        <div class="skill-container">
-          <div class="skill-name"><span>SQL</span><span>85%</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-        </div>
-      </div>
-      <div class="about-box" style="text-align: center;">
-        <i class="fa-solid fa-square-root-variable" style="font-size: 35px; color: var(--accent); margin-bottom: 10px;"></i>
+      <div class="about-box motion-card" style="text-align: center;">
+        <i class="fa-solid fa-square-root-variable" style="font-size: 35px; color: var(--accent); margin-bottom: 15px;"></i>
         <h3>Quantitative Analysis</h3>
-        <p style="font-size: 0.85rem; color: var(--muted);">Advanced Stats & Math modeling.</p>
+        <p style="font-size: 0.9rem; color: var(--muted);">Using Advanced Mathematics for predictive modeling.</p>
+      </div>
+      <div class="about-box motion-card" style="text-align: center;">
+        <i class="fa-solid fa-chart-line" style="font-size: 35px; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Data Visualization</h3>
+        <p style="font-size: 0.9rem; color: var(--muted);">Creating interactive dashboards in Power BI and Excel.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools & Skills</h2>
+    <div class="about-box">
+      <div class="skill-container">
+        <div class="skill-name"><span><i class="fa-solid fa-file-excel"></i> MS Excel (Advanced)</span><span>90%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-container">
+        <div class="skill-name"><span><i class="fa-solid fa-database"></i> SQL (MySQL/PostgreSQL)</span><span>85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+      </div>
+      <div class="skill-container">
+        <div class="skill-name"><span><i class="fa-brands fa-python"></i> Python (Pandas/NumPy)</span><span>80%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
+      </div>
+      <div class="skill-container">
+        <div class="skill-name"><span><i class="fa-solid fa-chart-column"></i> Power BI / Tableau</span><span>75%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
       </div>
     </div>
   </section>
@@ -95,24 +123,20 @@
   <section>
     <h2>Education</h2>
     <div class="about-box">
-      <div class="edu-card">
-        <span class="edu-year">2021 - 2024</span>
+      <div class="edu-block">
+        <span class="edu-tag">Graduation</span>
         <h3 style="color: var(--accent);">B.Sc. in Mathematics (Hons.)</h3>
-        <p>Vinoba Bhave University, Hazaribagh</p>
-        <p style="font-size: 0.9rem; color: var(--muted);">Specialization in Advanced Calculus and Statistics.</p>
+        <p>Vinoba Bhave University, Hazaribagh | 2021 - 2024</p>
       </div>
-
-      <div class="edu-card" style="margin-top: 25px;">
-        <span class="edu-year">2019 - 2021</span>
-        <h3>Higher Secondary (Class XII - PCM)</h3>
-        <p>Jharkhand Academic Council (JAC), Ranchi</p>
-        <p style="font-size: 0.9rem; color: var(--muted);">Core Subjects: Physics, Chemistry, Mathematics.</p>
+      <div class="edu-block">
+        <span class="edu-tag">Higher Secondary</span>
+        <h3>Class XII (PCM)</h3>
+        <p>Jharkhand Academic Council (JAC), Ranchi | 2021</p>
       </div>
-
-      <div class="edu-card" style="margin-top: 25px;">
-        <span class="edu-year">Graduated 2019</span>
-        <h3>Secondary School (Class X)</h3>
-        <p>Jharkhand Academic Council (JAC), Ranchi</p>
+      <div class="edu-block">
+        <span class="edu-tag">Secondary School</span>
+        <h3>Class X</h3>
+        <p>Jharkhand Academic Council (JAC), Ranchi | 2019</p>
       </div>
     </div>
   </section>
@@ -121,29 +145,39 @@
     <h2>Professional Certifications</h2>
     <div class="grid">
       <a href="https://skillshop.credential.net/a981e7ad-8913-4e6d-81bd-e13b68f51e85" target="_blank" class="about-box motion-card" style="border-top: 5px solid #4285F4;">
-        <h4 style="color:#4285F4">Google Analytics (Skillshop)</h4>
-        <p style="font-size: 0.8rem;">Official GA4 Verification</p>
+        <i class="fa-brands fa-google" style="color:#4285F4; font-size: 1.5rem; margin-bottom: 10px;"></i>
+        <h4>Google Analytics</h4>
+        <p style="font-size: 0.8rem;">Official Skillshop Verified Credential</p>
       </a>
       <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_DNgnMjxbuScMzerf7_1753444047640_completion_certificate.pdf" target="_blank" class="about-box motion-card" style="border-top: 5px solid #86BC25;">
         <h4 style="color:#86BC25">Deloitte Data Simulation</h4>
+        <p style="font-size: 0.8rem;">Forage Virtual Experience</p>
       </a>
     </div>
   </section>
 
   <section>
-    <h2>Connect</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));">
+    <h2>Connect With Me</h2>
+    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
       <a href="https://wa.me/917870327179" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:2rem;"></i>
+        <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:2.5rem; margin-bottom:10px;"></i>
+        <p style="font-weight:bold; color:#25D366;">WhatsApp</p>
       </a>
       <a href="https://www.linkedin.com/in/wali-xp" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-linkedin" style="color:#0077b5; font-size:2rem;"></i>
+        <i class="fa-brands fa-linkedin" style="color:#0077b5; font-size:2.5rem; margin-bottom:10px;"></i>
+        <p style="font-weight:bold; color:#0077b5;">LinkedIn</p>
       </a>
       <a href="https://github.com/wali-xp" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-github" style="color:var(--text); font-size:2rem;"></i>
+        <i class="fa-brands fa-github" style="color:var(--text); font-size:2.5rem; margin-bottom:10px;"></i>
+        <p style="font-weight:bold;">GitHub</p>
+      </a>
+      <a href="mailto:mdwaliullahkhan868@gmail.com" class="about-box motion-card" style="text-align:center">
+        <i class="fa-solid fa-envelope" style="color:#ea4335; font-size:2.5rem; margin-bottom:10px;"></i>
+        <p style="font-weight:bold; color:#ea4335;">Gmail</p>
       </a>
     </div>
   </section>
+
 </div>
 
 <footer>© 2026 Md Waliullah • Mathematics (Hons.) Analyst</footer>
