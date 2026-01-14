@@ -4,23 +4,33 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <title>Md Waliullah | Data Analyst</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Default: Dark Mode Variables */
     :root {
       --bg: #0f172a;
       --card: #111827;
       --text: #e5e7eb;
       --muted: #9ca3af;
       --accent: #38bdf8;
+      --body-bg: linear-gradient(135deg, #020617, #0f172a);
+    }
+
+    /* Light Mode Variables */
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #1e293b;
+      --muted: #64748b;
+      --accent: #0284c7;
+      --body-bg: #f1f5f9;
     }
 
     * {
@@ -31,9 +41,30 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #020617, #0f172a);
+      background: var(--body-bg);
       color: var(--text);
       line-height: 1.6;
+      transition: background 0.4s ease, color 0.4s ease; /* Smooth transition */
+      min-height: 100vh;
+    }
+
+    /* 🌙 Theme Toggle Button Style */
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 30px;
+      border: 1px solid var(--accent);
+      background: var(--card);
+      color: var(--text);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
     }
 
     header {
@@ -67,6 +98,8 @@
       background: var(--card);
       padding: 30px;
       border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      transition: background 0.4s ease;
     }
 
     .skills {
@@ -82,18 +115,14 @@
       text-align: center;
       border-radius: 14px;
       font-weight: 500;
+      transition: 0.4s ease;
     }
 
     footer {
       text-align: center;
       padding: 40px 20px;
-      border-top: 1px solid #1f2933;
+      border-top: 1px solid var(--muted);
       color: var(--muted);
-    }
-
-    /* 🔹 CONTACT ICONS – SMOOTH ANIMATION */
-    .links {
-      text-align: center;
     }
 
     .links a {
@@ -106,30 +135,13 @@
 
     .links a:hover {
       transform: scale(1.25);
-      color: white;
+      color: var(--text);
     }
 
-    /* WhatsApp green hover */
-    .links a:hover .fa-whatsapp {
-      color: #25D366;
-    }
-
-    /* ----------------- TYPING ANIMATION ----------------- */
     .typing {
       display: inline;
       border-right: 2px solid var(--accent);
       white-space: nowrap;
-      overflow: hidden;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink {
-      0%, 50%, 100% { border-color: var(--accent); }
-      25%, 75% { border-color: transparent; }
     }
 
   </style>
@@ -137,24 +149,27 @@
 
 <body>
 
+<button id="theme-toggle">
+    <span id="theme-icon">🌙</span> <span id="theme-text">Dark Mode</span>
+</button>
+
 <header>
   <img src="profile.jpg" alt="Md Waliullah"
-    style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #38bdf8;margin-bottom:20px;" />
+    style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);margin-bottom:20px;" />
 
   <h1>Md Waliullah</h1>
 
-  <!-- Typing Animation -->
-  <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:#38bdf8;">
+  <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:var(--accent);">
     <span class="typing" id="typing-text"></span>
   </p>
 
-  <p style="margin-top:6px;font-size:1rem;color:#9ca3af;">
+  <p style="margin-top:6px;font-size:1rem;color:var(--muted);">
     MS Excel • SQL • Python • Power BI
   </p>
 
   <div style="margin-top:20px;">
     <a href="Resume.pdf" download
-      style="display:inline-block;padding:12px 24px;border-radius:30px;background:#38bdf8;color:#020617;font-weight:600;">
+      style="display:inline-block;padding:12px 24px;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;">
       Download Resume
     </a>
   </div>
@@ -175,7 +190,6 @@
 
   <section>
     <h2>Tools & Skills</h2>
-
     <div class="about">
       <p><strong>Data Analysis:</strong> Excel, SQL, Python</p>
       <p><strong>Python Libraries:</strong> Pandas, NumPy, Matplotlib</p>
@@ -197,28 +211,21 @@
   <section>
     <h2>Contact</h2>
     <div class="about links">
-      <!-- WhatsApp -->
       <a href="https://wa.me/917870327179" target="_blank" aria-label="WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
       </a>
-
-      <!-- Email -->
       <a href="mailto:mdwaliullahkhan868@gmail.com">
         <i class="fa-solid fa-envelope"></i>
       </a>
-
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/wali-xp" target="_blank">
         <i class="fa-brands fa-linkedin"></i>
       </a>
-
-      <!-- GitHub -->
       <a href="https://github.com/wali-xp" target="_blank">
         <i class="fa-brands fa-github"></i>
       </a>
     </div>
 
-    <p style="text-align:center;margin-top:12px;color:#9ca3af;">
+    <p style="text-align:center;margin-top:12px;color:var(--muted);">
       💬 WhatsApp: +917870327179
     </p>
   </section>
@@ -229,9 +236,26 @@
   © 2026 Md Waliullah • Data Analyst Portfolio
 </footer>
 
-<!-- Typing Animation Script -->
 <script>
-const text = "Data Analyst"; // Text to type
+// --- Theme Toggle Logic ---
+const btn = document.getElementById("theme-toggle");
+const icon = document.getElementById("theme-icon");
+const themeText = document.getElementById("theme-text");
+
+btn.addEventListener("click", () => {
+  if (document.documentElement.getAttribute("data-theme") === "light") {
+    document.documentElement.removeAttribute("data-theme");
+    icon.innerText = "🌙";
+    themeText.innerText = "Dark Mode";
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+    icon.innerText = "☀️";
+    themeText.innerText = "Light Mode";
+  }
+});
+
+// --- Typing Animation Logic ---
+const text = "Data Analyst"; 
 const typingText = document.getElementById("typing-text");
 let i = 0;
 
@@ -239,10 +263,9 @@ function type() {
   if (i < text.length) {
     typingText.innerHTML += text.charAt(i);
     i++;
-    setTimeout(type, 150); // typing speed (ms)
+    setTimeout(type, 150); 
   }
 }
-
 type();
 </script>
 
