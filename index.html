@@ -137,4 +137,115 @@
       <div class="about" style="text-align: center;">
         <i class="fa-solid fa-database" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
         <h3>Data Management</h3>
-        <p style="font-size: 0.9rem; color: var(--muted);">Complex SQL queries and database systems
+        <p style="font-size: 0.9rem; color: var(--muted);">Complex SQL queries and database systems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="about" style="display: flex; flex-direction: column; gap: 20px;">
+      <div>
+        <h3 style="color: var(--accent);">B.Sc. in Mathematics (Hons.)</h3>
+        <p>Vinoba Bhave University, Hazaribagh | 2021 - 2024</p>
+      </div>
+      <div style="border-top: 1px solid var(--muted); padding-top: 15px;">
+        <h3>Higher Secondary (Class XII)</h3>
+        <p>JAC, Ranchi | 2021</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tools & Skills</h2>
+    <div class="about">
+      <div class="skill-container">
+        <div class="skill-name"><span>Excel</span><span>90%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
+      </div>
+      <div class="skill-container">
+        <div class="skill-name"><span>SQL</span><span>85%</span></div>
+        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+      <div class="about" style="border-top: 5px solid; border-image: linear-gradient(to right, #4285F4 25%, #EA4335 25% 50%, #FBBC05 50% 75%, #34A853 75%) 1;">
+        <h3>Google Analytics</h3>
+        <p style="font-size: 0.8rem; margin-bottom: 15px;">Official Skillshop Certification</p>
+        <a href="https://skillshop.credential.net/a981e7ad-8913-4e6d-81bd-e13b68f51e85" target="_blank" style="color: #4285F4; text-decoration: none; font-weight: 700;">VERIFY</a>
+      </div>
+      <div class="about" style="border-top: 5px solid #86BC25; background: linear-gradient(145deg, var(--card), #1a1a1a);">
+        <h3 style="color: white;">Deloitte<span style="color: #86BC25;">.</span></h3>
+        <p style="font-size: 0.8rem; margin-bottom: 15px;">Job Simulation Certificate</p>
+        <a href="#" target="_blank" style="color: #86BC25; text-decoration: none; font-weight: 700;">VERIFY</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact & Connect</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+      
+      <a href="https://wa.me/917870327179" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="about contact-card">
+          <i class="fa-brands fa-whatsapp" style="font-size: 40px; color: #25D366;"></i>
+          <h3>WhatsApp</h3>
+          <p style="color: #25D366; font-weight: 600;">Click to Chat</p>
+        </div>
+      </a>
+
+      <a href="mailto:mdwaliullahkhan868@gmail.com" style="text-decoration: none; color: inherit;">
+        <div class="about contact-card">
+          <i class="fa-solid fa-envelope" style="font-size: 40px; color: #ea4335;"></i>
+          <h3>Email</h3>
+          <p style="color: #ea4335; font-weight: 600;">Send Mail</p>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/wali-xp" target="_blank" style="text-decoration: none; color: inherit;">
+        <div class="about contact-card">
+          <i class="fa-brands fa-linkedin" style="font-size: 40px; color: #0077b5;"></i>
+          <h3>LinkedIn</h3>
+          <p style="color: #0077b5; font-weight: 600;">Connect</p>
+        </div>
+      </a>
+
+    </div>
+  </section>
+</div>
+
+<footer>© 2026 Md Waliullah • Mathematics (Hons.)</footer>
+
+<script>
+  const btn = document.getElementById("theme-toggle");
+  const icon = document.getElementById("theme-icon");
+  const themeText = document.getElementById("theme-text");
+
+  btn.addEventListener("click", () => {
+    if (document.documentElement.getAttribute("data-theme") === "light") {
+      document.documentElement.removeAttribute("data-theme");
+      icon.innerText = "🌙"; themeText.innerText = "Dark Mode";
+    } else {
+      document.documentElement.setAttribute("data-theme", "light");
+      icon.innerText = "☀️"; themeText.innerText = "Light Mode";
+    }
+  });
+
+  const text = "Data Analyst"; 
+  const typingText = document.getElementById("typing-text");
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      typingText.innerHTML += text.charAt(i); i++;
+      setTimeout(type, 150);
+    }
+  }
+  type();
+</script>
+
+</body>
+</html>
