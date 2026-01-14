@@ -5,164 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Md Waliullah | Data Analyst</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* 1. Theme Variables */
     :root {
-      --bg: #0f172a; --card: #111827; --text: #e5e7eb; --muted: #9ca3af;
-      --accent: #38bdf8; --body-bg: linear-gradient(135deg, #020617, #0f172a);
+      --bg: #0f172a; --card: #1e293b; --text: #f1f5f9; --muted: #94a3b8;
+      --accent: #38bdf8; --body-bg: #0f172a;
     }
     [data-theme="light"] {
       --bg: #f8fafc; --card: #ffffff; --text: #1e293b; --muted: #64748b;
       --accent: #0284c7; --body-bg: #f1f5f9;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; cursor: none !important; }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Inter', sans-serif; background: var(--body-bg);
-      color: var(--text); transition: 0.4s; min-height: 100vh; overflow-x: hidden;
+      color: var(--text); line-height: 1.6; transition: 0.3s;
     }
 
-    /* --- Custom Cursor --- */
-    #cursor {
-      width: 20px; height: 20px; border: 2px solid var(--accent);
-      border-radius: 50%; position: fixed; pointer-events: none;
-      z-index: 9999; transition: transform 0.1s ease, background 0.3s ease;
-      transform: translate(-50%, -50%);
-    }
-
-    .container { max-width: 1000px; margin: auto; padding: 20px; }
+    .container { max-width: 900px; margin: auto; padding: 20px; }
     header { padding: 60px 20px; text-align: center; }
-    section { margin-bottom: 60px; opacity: 0; transform: translateY(20px); transition: 0.8s all ease-out; }
-    section.visible { opacity: 1; transform: translateY(0); }
-    
-    h2 { font-size: 1.8rem; margin-bottom: 25px; border-left: 4px solid var(--accent); padding-left: 15px; }
-    
-    .about-box { background: var(--card); padding: 25px; border-radius: 15px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    section { margin-bottom: 40px; }
+    h2 { font-size: 1.8rem; margin-bottom: 20px; border-left: 5px solid var(--accent); padding-left: 15px; }
 
-    /* Motion Card Style */
+    /* --- Common Box Style --- */
+    .about-box { 
+      background: var(--card); padding: 25px; border-radius: 12px; 
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px;
+    }
+
+    /* --- Motion Effects (Safe & Simple) --- */
     .motion-card {
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transition: transform 0.3s ease, border-color 0.3s ease;
       border: 1px solid transparent; text-decoration: none; color: inherit; display: block;
     }
-    .motion-card:hover { 
-      transform: translateY(-10px) scale(1.02); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.3); 
-      border-color: var(--accent); 
+    .motion-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
     }
 
-    #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--accent); background: var(--card); color: var(--text); }
-    .typing { border-right: 2px solid var(--accent); }
-    footer { text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; }
+    /* Grid Layout */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+
+    /* Education Item */
+    .edu-item { padding: 10px 0; border-bottom: 1px solid rgba(148, 163, 184, 0.2); }
+    .edu-item:last-child { border-bottom: none; }
+
+    /* Theme Toggle */
+    #theme-toggle { 
+      position: fixed; top: 20px; right: 20px; z-index: 1000; 
+      padding: 10px 15px; cursor: pointer; border-radius: 20px; 
+      background: var(--accent); color: white; border: none; font-weight: bold;
+    }
+
+    .typing { border-right: 3px solid var(--accent); animation: blink 0.7s infinite; }
+    @keyframes blink { 50% { border-color: transparent; } }
   </style>
 </head>
 <body>
 
-<div id="cursor"></div>
 <button id="theme-toggle">🌙 Mode</button>
 
 <header>
-  <img src="profile.jpg" alt="Md Waliullah" style="width:140px;height:140px;border-radius:50%;border:4px solid var(--accent);object-fit:cover;margin-bottom:15px;">
-  <h1>Md Waliullah</h1>
+  <h1 style="font-size: 2.5rem;">Md Waliullah</h1>
   <p style="color:var(--accent); font-size:1.2rem; font-weight:600;"><span class="typing" id="typing-text"></span></p>
 </header>
 
 <div class="container">
   
-  <section class="reveal">
+  <section>
+    <h2>About Me</h2>
+    <div class="about-box">
+      <p>Data Analyst with a <strong>B.Sc. in Mathematics (Hons.)</strong>. Expert in SQL, Python, and Excel for business insights.</p>
+    </div>
+  </section>
+
+  <section>
     <h2>Education</h2>
     <div class="about-box">
-      <div style="padding-bottom:15px; border-bottom:1px solid rgba(156,163,175,0.1)">
+      <div class="edu-item">
         <h3 style="color:var(--accent)">B.Sc. Mathematics (Hons.)</h3>
         <p>Vinoba Bhave University | 2021 - 2024</p>
       </div>
-      <div style="padding-top:15px;">
-        <h3>Class XII & X</h3>
-        <p>JAC, Ranchi | 2021 & 2019</p>
+      <div class="edu-item">
+        <h3>Class XII (PCM)</h3>
+        <p>JAC, Ranchi | 2021</p>
+      </div>
+      <div class="edu-item">
+        <h3>Class X</h3>
+        <p>JAC, Ranchi | 2019</p>
       </div>
     </div>
   </section>
 
-  <section class="reveal">
-    <h2>Professional Certifications</h2>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
-      <a href="https://skillshop.credential.net/a981e7ad-8913-4e6d-81bd-e13b68f51e85" target="_blank" class="about-box motion-card" style="border-top:5px solid #4285F4">
-        <i class="fa-brands fa-google" style="color:#4285F4; font-size:2rem; margin-bottom:10px;"></i>
-        <h4 style="color:#4285F4">Google Analytics</h4>
-        <p style="font-size:0.85rem; color:var(--muted)">Skillshop Verified Credential</p>
+  <section>
+    <h2>Certifications</h2>
+    <div class="grid">
+      <a href="https://skillshop.credential.net/a981e7ad-8913-4e6d-81bd-e13b68f51e85" target="_blank" class="about-box motion-card" style="border-top: 5px solid #4285F4;">
+        <h3 style="color:#4285F4">Google Analytics</h3>
+        <p>Skillshop Certified (GA4)</p>
       </a>
-      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_DNgnMjxbuScMzerf7_1753444047640_completion_certificate.pdf" target="_blank" class="about-box motion-card" style="border-top:5px solid #86BC25">
-        <h4 style="color:#86BC25">Deloitte.</h4>
-        <p style="font-size:0.85rem; color:var(--muted)">Data Analytics Job Simulation</p>
+      <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_DNgnMjxbuScMzerf7_1753444047640_completion_certificate.pdf" target="_blank" class="about-box motion-card" style="border-top: 5px solid #86BC25;">
+        <h3 style="color:#86BC25">Deloitte.</h3>
+        <p>Data Job Simulation</p>
       </a>
     </div>
   </section>
 
-  <section class="reveal">
-    <h2>Connect With Me</h2>
-    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:20px;">
-      
+  <section>
+    <h2>Connect</h2>
+    <div class="grid">
       <a href="https://wa.me/917870327179" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:2.5rem; margin-bottom:10px;"></i>
-        <h3 style="font-size:1.1rem;">WhatsApp</h3>
-        <p style="color:#25D366; font-size:0.8rem; font-weight:600;">Click to Chat</p>
+        <i class="fa-brands fa-whatsapp" style="color:#25D366; font-size:2rem;"></i>
+        <p>WhatsApp</p>
       </a>
-
       <a href="https://www.linkedin.com/in/wali-xp" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-linkedin" style="color:#0077b5; font-size:2.5rem; margin-bottom:10px;"></i>
-        <h3 style="font-size:1.1rem;">LinkedIn</h3>
-        <p style="color:#0077b5; font-size:0.8rem; font-weight:600;">Network</p>
+        <i class="fa-brands fa-linkedin" style="color:#0077b5; font-size:2rem;"></i>
+        <p>LinkedIn</p>
       </a>
-
       <a href="mailto:mdwaliullahkhan868@gmail.com" class="about-box motion-card" style="text-align:center">
-        <i class="fa-solid fa-envelope" style="color:#ea4335; font-size:2.5rem; margin-bottom:10px;"></i>
-        <h3 style="font-size:1.1rem;">Gmail</h3>
-        <p style="color:#ea4335; font-size:0.8rem; font-weight:600;">Send Mail</p>
+        <i class="fa-solid fa-envelope" style="color:#ea4335; font-size:2rem;"></i>
+        <p>Gmail</p>
       </a>
-
       <a href="https://github.com/wali-xp" target="_blank" class="about-box motion-card" style="text-align:center">
-        <i class="fa-brands fa-github" style="color:var(--text); font-size:2.5rem; margin-bottom:10px;"></i>
-        <h3 style="font-size:1.1rem;">GitHub</h3>
-        <p style="color:var(--muted); font-size:0.8rem; font-weight:600;">Projects</p>
+        <i class="fa-brands fa-github" style="color:var(--text); font-size:2rem;"></i>
+        <p>GitHub</p>
       </a>
-
     </div>
   </section>
 
 </div>
 
-<footer>© 2026 Md Waliullah •Analyst</footer>
-
 <script>
-  // Cursor Logic
-  const cursor = document.getElementById('cursor');
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-  });
-  document.querySelectorAll('a, button').forEach(item => {
-    item.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%, -50%) scale(2.5)'; cursor.style.background = 'rgba(56, 189, 248, 0.1)'; });
-    item.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%, -50%) scale(1)'; cursor.style.background = 'transparent'; });
-  });
-
-  // Scroll Reveal
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('section').forEach(section => observer.observe(section));
-
-  // Theme & Typing
+  // Simple Theme Toggle
   const btn = document.getElementById("theme-toggle");
   btn.addEventListener("click", () => {
     if (document.documentElement.getAttribute("data-theme") === "light") {
-      document.documentElement.removeAttribute("data-theme"); btn.innerText = "🌙 Mode";
+      document.documentElement.removeAttribute("data-theme");
+      btn.innerText = "🌙 Mode";
     } else {
-      document.documentElement.setAttribute("data-theme", "light"); btn.innerText = "☀️ Mode";
+      document.documentElement.setAttribute("data-theme", "light");
+      btn.innerText = "☀️ Mode";
     }
   });
 
-  const text = "Data Analyst"; let i = 0;
-  function type() { if (i < text.length) { document.getElementById("typing-text").innerHTML += text.charAt(i); i++; setTimeout(type, 150); } }
+  // Simple Typing
+  const text = "Data Analyst"; 
+  let i = 0;
+  function type() {
+    if (i < text.length) {
+      document.getElementById("typing-text").innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, 150);
+    }
+  }
   type();
 </script>
 
