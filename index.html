@@ -13,6 +13,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    /* Scrollbar ki width (kitni patli/moti hogi) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Scrollbar ka track (piche ka rasta) */
+::-webkit-scrollbar-track {
+  background: var(--body-bg); 
+}
+
+/* Scrollbar ka handle (jo move hota hai) */
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+  border: 2px solid var(--body-bg); /* Handle ke charo taraf thodi space */
+}
+
+/* Handle par mouse le jaane par uska rang thoda dark hoga */
+::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.8);
+}
     /* Default: Dark Mode Variables */
     :root {
       --bg: #0f172a;
