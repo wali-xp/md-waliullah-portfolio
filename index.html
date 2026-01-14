@@ -13,6 +13,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    <style>
+  .contact-card:hover {
+    transform: translateY(-10px) scale(1.02); /* Card thoda upar uthega aur bada hoga */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Niche shadow aayegi */
+    border-color: var(--accent) !important; /* Border color change hoga */
+  }
+
+  .contact-card:hover i {
+    transform: scale(1.2) rotate(5deg); /* Icon thoda bada aur rotate hoga */
+  }
+  
+  /* Dark mode ke liye shadow adjust */
+  [data-theme="dark"] .contact-card:hover {
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+  }
+</style>
     /* Scrollbar ki width (kitni patli/moti hogi) */
 ::-webkit-scrollbar {
   width: 10px;
