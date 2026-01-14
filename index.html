@@ -144,6 +144,12 @@
       white-space: nowrap;
     }
 
+    header a:hover {
+  transform: translateY(-3px); /* Button thoda upar uthega */
+  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4); /* Thoda glow karega */
+  filter: brightness(1.1); /* Thoda bright ho jayega */
+}
+    
   </style>
 </head>
 
@@ -168,11 +174,11 @@
   </p>
 
   <div style="margin-top:20px;">
-    <a href="Resume.pdf" download
-      style="display:inline-block;padding:12px 24px;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;">
-      Download Resume
-    </a>
-  </div>
+  <a href="Resume.pdf" download
+    style="display:inline-block;padding:12px 24px;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition: 0.3s ease;">
+    Download Resume <i class="fa-solid fa-download" style="margin-left: 8px;"></i>
+  </a>
+</div>
 </header>
 
 <div class="container">
