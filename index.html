@@ -3,53 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
   <title>Md Waliullah | Data Analyst</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
-    <style>
-  .contact-card:hover {
-    transform: translateY(-10px) scale(1.02); /* Card thoda upar uthega aur bada hoga */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Niche shadow aayegi */
-    border-color: var(--accent) !important; /* Border color change hoga */
-  }
-
-  .contact-card:hover i {
-    transform: scale(1.2) rotate(5deg); /* Icon thoda bada aur rotate hoga */
-  }
-  
-  /* Dark mode ke liye shadow adjust */
-  [data-theme="dark"] .contact-card:hover {
-    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
-  }
-</style>
-    /* Scrollbar ki width (kitni patli/moti hogi) */
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-/* Scrollbar ka track (piche ka rasta) */
-::-webkit-scrollbar-track {
-  background: var(--body-bg); 
-}
-
-/* Scrollbar ka handle (jo move hota hai) */
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 10px;
-  border: 2px solid var(--body-bg); /* Handle ke charo taraf thodi space */
-}
-
-/* Handle par mouse le jaane par uska rang thoda dark hoga */
-::-webkit-scrollbar-thumb:hover {
-  filter: brightness(0.8);
-}
     /* Default: Dark Mode Variables */
     :root {
       --bg: #0f172a;
@@ -70,158 +30,66 @@
       --body-bg: #f1f5f9;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--body-bg);
       color: var(--text);
       line-height: 1.6;
-      transition: background 0.4s ease, color 0.4s ease; /* Smooth transition */
+      transition: background 0.4s ease, color 0.4s ease;
       min-height: 100vh;
     }
 
-    /* 🌙 Theme Toggle Button Style */
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-track { background: var(--body-bg); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; border: 2px solid var(--body-bg); }
+    ::-webkit-scrollbar-thumb:hover { filter: brightness(0.8); }
+
+    /* Theme Toggle */
     #theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 1000;
-      padding: 10px 15px;
-      cursor: pointer;
-      border-radius: 30px;
-      border: 1px solid var(--accent);
-      background: var(--card);
-      color: var(--text);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.3s;
+      position: fixed; top: 20px; right: 20px; z-index: 1000;
+      padding: 10px 15px; cursor: pointer; border-radius: 30px;
+      border: 1px solid var(--accent); background: var(--card);
+      color: var(--text); font-weight: 600; display: flex; align-items: center; gap: 8px; transition: 0.3s;
     }
 
-    header {
-      padding: 80px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 700;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      padding: 20px;
-    }
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      border-left: 4px solid var(--accent);
-      padding-left: 12px;
-    }
+    header { padding: 80px 20px; text-align: center; }
+    header h1 { font-size: 3rem; font-weight: 700; }
+    .container { max-width: 1100px; margin: auto; padding: 20px; }
+    section { margin-bottom: 60px; }
+    h2 { font-size: 2rem; margin-bottom: 20px; border-left: 4px solid var(--accent); padding-left: 12px; }
 
     .about {
-      background: var(--card);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      transition: background 0.4s ease;
+      background: var(--card); padding: 30px; border-radius: 16px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.4s ease;
     }
 
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-      margin-top: 25px;
+    /* --- Hal-chal wala Hover Effect --- */
+    .contact-card {
+      text-align: center; padding: 25px; height: 100%;
+      border: 1px solid transparent; cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
-    .skill {
-      background: var(--card);
-      padding: 16px;
-      text-align: center;
-      border-radius: 14px;
-      font-weight: 500;
-      transition: 0.4s ease;
+    .contact-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      border-color: var(--accent) !important;
     }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid var(--muted);
-      color: var(--muted);
-    }
+    .contact-card:hover i { transform: scale(1.2) rotate(5deg); }
 
-    .links a {
-      margin: 0 14px;
-      font-size: 26px;
-      color: var(--accent);
-      display: inline-block;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
+    /* Skill Bars */
+    .skill-container { margin-bottom: 20px; }
+    .skill-name { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
+    .bar-bg { background: #1f2937; height: 10px; border-radius: 10px; overflow: hidden; }
+    [data-theme="light"] .bar-bg { background: #e2e8f0; }
+    .bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1.5s; }
 
-    .links a:hover {
-      transform: scale(1.25);
-      color: var(--text);
-    }
-
-    .typing {
-      display: inline;
-      border-right: 2px solid var(--accent);
-      white-space: nowrap;
-    }
-
-    header a:hover {
-  transform: translateY(-3px); /* Button thoda upar uthega */
-  box-shadow: 0 5px 15px rgba(56, 189, 248, 0.4); /* Thoda glow karega */
-  filter: brightness(1.1); /* Thoda bright ho jayega */
-}
-    /* Skill Bar Container */
-.skill-container {
-    margin-bottom: 20px;
-}
-
-.skill-name {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
-
-.bar-bg {
-    background: #1f2937; /* Khali bar ka rang */
-    height: 10px;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.bar-fill {
-    height: 100%;
-    background: var(--accent); /* Bhara hua rang (Blue) */
-    border-radius: 10px;
-    transition: width 1.5s ease-in-out;
-}
-
-/* Light mode ke liye bar-bg ka color change */
-[data-theme="light"] .bar-bg {
-    background: #e2e8f0;
-}
-    .header-links a:hover {
-  color: var(--text) !important;
-  transform: scale(1.2);
-  display: inline-block;
-}
-    
+    .typing { border-right: 2px solid var(--accent); white-space: nowrap; }
+    footer { text-align: center; padding: 40px 20px; border-top: 1px solid var(--muted); color: var(--muted); }
   </style>
 </head>
 
@@ -232,307 +100,41 @@
 </button>
 
 <header>
-  <img src="profile.jpg" alt="Md Waliullah"
-    style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);margin-bottom:20px;" />
-
+  <img src="profile.jpg" alt="Md Waliullah" style="width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid var(--accent);margin-bottom:20px;" />
   <h1>Md Waliullah</h1>
-
-  <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:var(--accent);">
-    <span class="typing" id="typing-text"></span>
-  </p>
-
-  <p style="margin-top:6px;font-size:1rem;color:var(--muted);">
-    MS Excel • SQL • Python • Power BI
-  </p>
+  <p style="margin-top:10px;font-size:1.3rem;font-weight:600;color:var(--accent);"><span class="typing" id="typing-text"></span></p>
+  <p style="margin-top:6px;font-size:1rem;color:var(--muted);">MS Excel • SQL • Python • Power BI</p>
 
   <div style="margin-top:20px;">
-  <a href="Resume.pdf" download
-    style="display:inline-block;padding:12px 24px;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition: 0.3s ease;">
-    Download Resume <i class="fa-solid fa-download" style="margin-left: 8px;"></i>
-  </a>
-</div>
-  <div class="header-links" style="margin-top: 25px;">
-  <a href="https://www.linkedin.com/in/wali-xp" target="_blank" title="LinkedIn" 
-     style="margin: 0 10px; font-size: 24px; color: var(--accent); text-decoration: none; transition: 0.3s;">
-    <i class="fa-brands fa-linkedin"></i>
-  </a>
-  
-  <a href="https://github.com/wali-xp" target="_blank" title="GitHub" 
-     style="margin: 0 10px; font-size: 24px; color: var(--accent); text-decoration: none; transition: 0.3s;">
-    <i class="fa-brands fa-github"></i>
-  </a>
-
-  <a href="mailto:mdwaliullahkhan868@gmail.com" title="Email" 
-     style="margin: 0 10px; font-size: 24px; color: var(--accent); text-decoration: none; transition: 0.3s;">
-    <i class="fa-solid fa-envelope"></i>
-  </a>
-</div>
+    <a href="Resume.pdf" download style="display:inline-block;padding:12px 24px;border-radius:30px;background:var(--accent);color:#fff;font-weight:600;text-decoration:none;transition: 0.3s ease;">
+      Download Resume <i class="fa-solid fa-download" style="margin-left: 8px;"></i>
+    </a>
+  </div>
 </header>
 
 <div class="container">
-<section>
+  <section>
     <h2>About Me</h2>
-  <div class="about">
-    <p style="font-size: 1.1rem; line-height: 1.8;">
-      I am a <strong style="color: var(--accent);">Data Analyst with a background in Mathematics (Hons.) and Statistics</strong>. 
-      This academic foundation allows me to solve data-driven challenges with high analytical rigor and logical precision. 
-    </p>
-    <p style="margin-top: 15px; font-size: 1.1rem; line-height: 1.8;">
-      Using <strong>Excel, SQL, and Python</strong>, I bridge the gap between complex quantitative models and actionable business strategies. 
-      I am passionate about leveraging my mathematical edge to build clear and impactful data stories.
-    </p>
-  </div>
-</section>
-  <section>
-  <h2>My Expertise</h2>
-  <div class="expertise-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px;">
-    
-    <div class="about" style="text-align: center; padding: 20px;">
-      <i class="fa-solid fa-square-root-variable" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
-      <h3 style="margin-bottom: 10px;">Quantitative Analysis</h3>
-      <p style="font-size: 0.9rem; color: var(--muted);">Applying my Mathematics (Hons.) foundation to identify trends and perform predictive modeling.</p>
+    <div class="about">
+      <p style="font-size: 1.1rem; line-height: 1.8;">I am a <strong style="color: var(--accent);">Data Analyst with a background in Mathematics (Hons.) and Statistics</strong>.</p>
+      <p style="margin-top: 15px; font-size: 1.1rem; line-height: 1.8;">Using <strong>Excel, SQL, and Python</strong>, I bridge the gap between complex quantitative models and actionable business strategies.</p>
     </div>
-
-    <div class="about" style="text-align: center; padding: 20px;">
-      <i class="fa-solid fa-chart-line" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
-      <h3 style="margin-bottom: 10px;">Data Visualization</h3>
-      <p style="font-size: 0.9rem; color: var(--muted);">Turning raw numbers into interactive dashboards using Power BI and advanced Excel charts.</p>
-    </div>
-
-    <div class="about" style="text-align: center; padding: 20px;">
-      <i class="fa-solid fa-database" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
-      <h3 style="margin-bottom: 10px;">Data Management</h3>
-      <p style="font-size: 0.9rem; color: var(--muted);">Writing complex SQL queries to extract and organize data from various database systems.</p>
-    </div>
-
-  </div>
-</section>
-<section>
-  <h2>Education</h2>
-  <div class="about" style="display: flex; flex-direction: column; gap: 20px;">
-    
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--muted); padding-bottom: 15px;">
-  <div>
-    <h3 style="color: var(--accent);">B.Sc. in Mathematics (Hons.)</h3>
-    <p style="font-weight: 500;">Vinoba Bhave University, Hazaribagh</p>
-    <p style="font-size: 0.9rem; color: var(--muted); margin-top: 5px;">
-      <i class="fa-solid fa-calendar-days" style="margin-right: 5px;"></i> Session: 2021 - 2024
-    </p>
-    <p style="font-size: 0.9rem; color: var(--muted); margin-top: 5px;">
-      Focus: Advanced Calculus, Statistics, and Numerical Methods.
-    </p>
-  </div>
-  <div style="text-align: right; min-width: 100px;">
-    <span style="background: var(--accent); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
-      Graduated
-    </span>
-  </div>
-</div>
-
-    <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--muted); padding-bottom: 15px;">
-      <div>
-        <h3 style="color: var(--text);">Higher Secondary (Class XII)</h3>
-        <p style="font-weight: 500;">Jharkhand Academic Council(JAC), Ranchi</p>
-        <p style="font-size: 0.9rem; color: var(--muted); margin-top: 5px;">
-          Stream: PCM (Physics, Chemistry, Mathematics)
-        </p>
-      </div>
-      <div style="text-align: right; min-width: 100px;">
-        <span style="color: var(--muted); font-size: 0.9rem;">2021</span>
-      </div>
-    </div>
-
-    <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-      <div>
-        <h3 style="color: var(--text);">Secondary School (Class X)</h3>
-        <p style="font-weight: 500;">Jharkhand Academic Council(JAC), Ranchi</p>
-      </div>
-      <div style="text-align: right; min-width: 100px;">
-        <span style="color: var(--muted); font-size: 0.9rem;">2019</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-  
-
-
-  <section>
-   
-   <h2>Tools & Skills</h2>
-  <div class="about">
-    
-    <div class="skill-container">
-      <div class="skill-name">
-        <span><i class="fa-solid fa-file-excel"></i> MS Excel</span>
-        <span>90%</span>
-      </div>
-      <div class="bar-bg">
-        <div class="bar-fill" style="width: 90%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-container" style="margin-top: 20px;">
-      <div class="skill-name">
-        <span><i class="fa-solid fa-database"></i> SQL (MySQL/PostgreSQL)</span>
-        <span>85%</span>
-      </div>
-      <div class="bar-bg">
-        <div class="bar-fill" style="width: 85%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-container" style="margin-top: 20px;">
-      <div class="skill-name">
-        <span><i class="fa-brands fa-python"></i> Python (Pandas/NumPy)</span>
-        <span>80%</span>
-      </div>
-      <div class="bar-bg">
-        <div class="bar-fill" style="width: 80%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-container" style="margin-top: 20px;">
-      <div class="skill-name">
-        <span><i class="fa-solid fa-chart-column"></i> Power BI</span>
-        <span>75%</span>
-      </div>
-      <div class="bar-bg">
-        <div class="bar-fill" style="width: 75%;"></div>
-      </div>
-    </div>
-
-  </div>
   </section>
+
   <section>
-  <h2>Professional Certifications</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px;">
-    
-    <div class="about" style="border-top: 5px solid; border-image: linear-gradient(to right, #4285F4 25%, #EA4335 25% 50%, #FBBC05 50% 75%, #34A853 75%) 1; padding: 25px; position: relative; border-radius: 12px;">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-    <div style="display: flex; align-items: center; gap: 12px;">
-       <i class="fa-brands fa-google" style="font-size: 30px; background: linear-gradient(45deg, #4285F4, #EA4335, #FBBC05, #34A853); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
-       <h3 style="margin: 0; font-family: 'Product Sans', sans-serif;">Google Analytics Certification</h3>
-    </div>
-    <span style="font-size: 0.7rem; background: #e8f0fe; color: #1967d2; padding: 4px 8px; border-radius: 4px; font-weight: bold;">SKILLSHOP</span>
-  </div>
-
-  <p style="font-size: 0.9rem; color: var(--text); font-weight: 500; margin-bottom: 5px;">Issued to: MD WALIULLAH</p>
-  
-  <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 20px;">
-    Validated expertise in Google Analytics (GA4), including data collection, conversion tracking, and audience insights to drive business growth.
-  </p>
-
-  <a href="https://skillshop.credential.net/a981e7ad-8913-4e6d-81bd-e13b68f51e85#acc.mlP7DpAL" target="_blank" style="display: inline-block; font-size: 0.8rem; color: #4285F4; text-decoration: none; font-weight: 700; border: 1.5px solid #4285F4; padding: 8px 16px; border-radius: 6px; transition: 0.3s;" onmouseover="this.style.background='#4285F4'; this.style.color='#ffffff'" onmouseout="this.style.background='transparent'; this.style.color='#4285F4'">
-    VIEW CREDENTIAL <i class="fa-solid fa-certificate" style="margin-left: 5px;"></i>
-  </a>
-</div>
-
-   <div class="about" style="border-top: 5px solid #86BC25; padding: 25px; position: relative; background: linear-gradient(145deg, var(--card), #1a1a1a); border-radius: 12px; transition: transform 0.3s ease;">
-  <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-    <h3 style="margin: 0; font-family: 'Open Sans', sans-serif; font-weight: 800; letter-spacing: -1px; color: #ffffff; font-size: 1.4rem;">
-      Deloitte<span style="color: #86BC25;">.</span>
-    </h3>
-    <i class="fa-solid fa-briefcase" style="color: #86BC25; font-size: 1.2rem;"></i>
-  </div>
-
-  <div style="margin-bottom: 20px;">
-    <h4 style="margin: 0; color: var(--text); font-size: 1.1rem;">Data Analytics Job Simulation</h4>
-    <p style="margin: 5px 0 0 0; font-size: 0.85rem; color: #86BC25; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">
-      Forage Virtual Experience
-    </p>
-  </div>
-
-  <p style="font-size: 0.85rem; color: var(--muted); line-height: 1.5; margin-bottom: 20px;">
-    Completed tasks in data dashboarding, quality analysis, and strategic insights for Deloitte's client projects.
-  </p>
-
-  <a href="https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_DNgnMjxbuScMzerf7_1753444047640_completion_certificate.pdf" target="_blank" style="display: inline-block; font-size: 0.8rem; color: #86BC25; text-decoration: none; font-weight: 700; border: 1px solid #86BC25; padding: 6px 12px; border-radius: 4px; transition: 0.3s;" onmouseover="this.style.background='#86BC25'; this.style.color='#000'" onmouseout="this.style.background='transparent'; this.style.color='#86BC25'">
-    VIEW CREDENTIAL <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px; margin-left: 5px;"></i>
-  </a>
-</div>
-  </div>
-</section>
-
- <section>
-  <h2>Contact & Connect</h2>
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px;">
-    
-   <a href="https://wa.me/917870327179" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="about" style="text-align: center; padding: 25px; transition: 0.3s; border: 1px solid transparent; height: 100%;">
-    <i class="fa-brands fa-whatsapp" style="font-size: 35px; color: #25D366; margin-bottom: 15px;"></i>
-    <h3 style="font-size: 1.1rem; margin-bottom: 5px;">WhatsApp</h3>
-    <p style="font-size: 0.9rem; color: var(--accent); font-weight: 500;">
-      <i class="fa-solid fa-comment-dots"></i> Click to Chat
-    </p>
-  </div>
-</a>
-
-    <a href="mailto:mdwaliullahkhan868@gmail.com" style="text-decoration: none; color: inherit;">
-      <div class="about" style="text-align: center; padding: 25px; transition: 0.3s; border: 1px solid transparent; height: 100%;">
-        <i class="fa-solid fa-envelope" style="font-size: 35px; color: #ea4335; margin-bottom: 15px;"></i>
-        <h3 style="font-size: 1.1rem; margin-bottom: 5px;">Email</h3>
-        <p style="font-size: 0.9rem; color: var(--muted);">Let's collaborate</p>
+    <h2>My Expertise</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+      <div class="about" style="text-align: center;">
+        <i class="fa-solid fa-square-root-variable" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Quantitative Analysis</h3>
+        <p style="font-size: 0.9rem; color: var(--muted);">Mathematics (Hons.) foundation for predictive modeling.</p>
       </div>
-    </a>
-
-    <a href="https://www.linkedin.com/in/wali-xp" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="about" style="text-align: center; padding: 25px; transition: 0.3s; border: 1px solid transparent; height: 100%;">
-        <i class="fa-brands fa-linkedin" style="font-size: 35px; color: #0077b5; margin-bottom: 15px;"></i>
-        <h3 style="font-size: 1.1rem; margin-bottom: 5px;">LinkedIn</h3>
-        <p style="font-size: 0.9rem; color: var(--muted);">Professional Network</p>
+      <div class="about" style="text-align: center;">
+        <i class="fa-solid fa-chart-line" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Data Visualization</h3>
+        <p style="font-size: 0.9rem; color: var(--muted);">Interactive dashboards using Power BI and Excel.</p>
       </div>
-    </a>
-
-    <a href="https://github.com/wali-xp" target="_blank" style="text-decoration: none; color: inherit;">
-      <div class="about" style="text-align: center; padding: 25px; transition: 0.3s; border: 1px solid transparent; height: 100%;">
-        <i class="fa-brands fa-github" style="font-size: 35px; color: var(--accent); margin-bottom: 15px;"></i>
-        <h3 style="font-size: 1.1rem; margin-bottom: 5px;">GitHub</h3>
-        <p style="font-size: 0.9rem; color: var(--muted);">View My Projects</p>
-      </div>
-    </a>
-
-  </div>
-</section>
-
-</div>
-
-<footer>
-  © 2026 Md Waliullah • Data Analyst
-</footer>
-
-<script>
-// --- Theme Toggle Logic ---
-const btn = document.getElementById("theme-toggle");
-const icon = document.getElementById("theme-icon");
-const themeText = document.getElementById("theme-text");
-
-btn.addEventListener("click", () => {
-  if (document.documentElement.getAttribute("data-theme") === "light") {
-    document.documentElement.removeAttribute("data-theme");
-    icon.innerText = "🌙";
-    themeText.innerText = "Dark Mode";
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    icon.innerText = "☀️";
-    themeText.innerText = "Light Mode";
-  }
-});
-
-// --- Typing Animation Logic ---
-const text = "Data Analyst"; 
-const typingText = document.getElementById("typing-text");
-let i = 0;
-
-function type() {
-  if (i < text.length) {
-    typingText.innerHTML += text.charAt(i);
-    i++;
-    setTimeout(type, 150); 
-  }
-}
-type();
-</script>
-
-</body>
-</html>
+      <div class="about" style="text-align: center;">
+        <i class="fa-solid fa-database" style="font-size: 30px; color: var(--accent); margin-bottom: 15px;"></i>
+        <h3>Data Management</h3>
+        <p style="font-size: 0.9rem; color: var(--muted);">Complex SQL queries and database systems
