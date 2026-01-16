@@ -52,6 +52,44 @@
     #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 15px; cursor: pointer; border-radius: 30px; border: 1px solid var(--accent); background: var(--card); color: var(--text); font-weight: 600; }
     .typing { border-right: 2px solid var(--accent); white-space: nowrap; }
     footer { text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid rgba(156,163,175,0.1); }
+
+    /* Styling for the new Quick Contact section below CV button */
+.quick-contact {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Spacing between icons */
+}
+
+.quick-contact a {
+    font-size: 1.6rem;
+    color: inherit; /* Matches your current text color (Black or White) */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+/* Hover effects for each platform */
+.quick-contact a:hover {
+    opacity: 1;
+    transform: translateY(-5px);
+}
+
+.quick-contact .fa-envelope:hover { color: #EA4335; }   /* Gmail Red */
+.quick-contact .fa-linkedin:hover { color: #0077B5; }   /* LinkedIn Blue */
+.quick-contact .fa-github:hover { color: #6e5494; }     /* GitHub Purple */
+.quick-contact .fa-whatsapp:hover { color: #25D366; }   /* WhatsApp Green */
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .quick-contact {
+        gap: 20px;
+    }
+    .quick-contact a {
+        font-size: 1.4rem;
+    }
+}
   </style>
 </head>
 <body>
@@ -68,6 +106,20 @@
       DOWNLOAD RESUME <i class="fa-solid fa-download" style="margin-left: 8px;"></i>
     </a>
   </div>
+  <div class="quick-contact">
+    <a href="mailto:mdwaliullahkhan868@gmail.com" title="Email Me">
+        <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/wali-xp" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/wali-xp" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://wa.me/917870327179" target="_blank" title="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</div>
 </header>
 
 <div class="container">
