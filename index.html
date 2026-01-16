@@ -90,6 +90,40 @@
         font-size: 1.4rem;
     }
 }
+
+    /* Skills Section - Pill Design */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+.skill-tag {
+    background-color: rgba(0, 123, 255, 0.1); /* Light blue tint */
+    color: #007bff; /* Primary blue */
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    padding: 8px 18px;
+    border-radius: 50px; /* Makes it a pill shape */
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Dark Mode adjustment if your site uses a dark background */
+body.dark-mode .skill-tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #f8f9fa;
+    border-color: rgba(255, 255, 255, 0.2);
+}
   </style>
 </head>
 <body>
@@ -165,28 +199,19 @@
 
   </div>
 </section>
-  <section>
+  <section id="skills">
     <h2>Tools & Skills</h2>
-    <div class="about-box">
-      <div class="skill-container">
-        <div class="skill-name"><span><i class="fa-solid fa-file-excel"></i> MS Excel (Advanced)</span><span>90%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width: 90%;"></div></div>
-      </div>
-      <div class="skill-container">
-        <div class="skill-name"><span><i class="fa-solid fa-database"></i> SQL (MySQL/PostgreSQL)</span><span>85%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width: 85%;"></div></div>
-      </div>
-      <div class="skill-container">
-        <div class="skill-name"><span><i class="fa-brands fa-python"></i> Python (Pandas/NumPy)</span><span>80%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width: 80%;"></div></div>
-      </div>
-      <div class="skill-container">
-        <div class="skill-name"><span><i class="fa-solid fa-chart-column"></i> Power BI / Tableau</span><span>75%</span></div>
-        <div class="bar-bg"><div class="bar-fill" style="width: 75%;"></div></div>
-      </div>
+    <div class="skills-container">
+        <span class="skill-tag">MS Excel (Advanced)</span>
+        <span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
+        <span class="skill-tag">Python (Pandas/NumPy)</span>
+        <span class="skill-tag">Power BI / Tableau</span>
+        <span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">Statistical Modeling</span>
+        <span class="skill-tag">Google Analytics</span>
+        <span class="skill-tag">Quantitative Analysis</span>
     </div>
-  </section>
-
+</section>
   <section style="margin-top: 50px;">
   <h2>Featured Projects</h2>
   <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 20px;">
