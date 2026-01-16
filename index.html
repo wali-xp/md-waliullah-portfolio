@@ -124,6 +124,45 @@ body.dark-mode .skill-tag {
     color: #f8f9fa;
     border-color: rgba(255, 255, 255, 0.2);
 }
+    /* Modern Skill Pills with Icons */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-secondary, #f8f9fa); /* Uses your theme's secondary bg */
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.skill-pill i {
+    font-size: 1.2rem;
+    color: #007bff; /* Professional blue for icons */
+}
+
+.skill-pill:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,123,255,0.2);
+    border-color: #007bff;
+}
+
+/* Dark Mode adjustment */
+body.dark-mode .skill-pill {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #fff;
+}
   </style>
 </head>
 <body>
@@ -202,14 +241,30 @@ body.dark-mode .skill-tag {
   <section id="skills">
     <h2>Tools & Skills</h2>
     <div class="skills-container">
-        <span class="skill-tag">MS Excel (Advanced)</span>
-        <span class="skill-tag">SQL (MySQL/PostgreSQL)</span>
-        <span class="skill-tag">Python (Pandas/NumPy)</span>
-        <span class="skill-tag">Power BI / Tableau</span>
-        <span class="skill-tag">Data Visualization</span>
-        <span class="skill-tag">Statistical Modeling</span>
-        <span class="skill-tag">Google Analytics</span>
-        <span class="skill-tag">Quantitative Analysis</span>
+        <div class="skill-pill">
+            <i class="fas fa-file-excel"></i>
+            <span>MS Excel (Advanced)</span>
+        </div>
+        <div class="skill-pill">
+            <i class="fas fa-database"></i>
+            <span>SQL (MySQL/PostgreSQL)</span>
+        </div>
+        <div class="skill-pill">
+            <i class="fab fa-python"></i>
+            <span>Python (Pandas/NumPy)</span>
+        </div>
+        <div class="skill-pill">
+            <i class="fas fa-chart-bar"></i>
+            <span>Power BI / Tableau</span>
+        </div>
+        <div class="skill-pill">
+            <i class="fas fa-chart-line"></i>
+            <span>Statistical Modeling</span>
+        </div>
+        <div class="skill-pill">
+            <i class="fas fa-magnifying-glass-chart"></i>
+            <span>Google Analytics</span>
+        </div>
     </div>
 </section>
   <section style="margin-top: 50px;">
