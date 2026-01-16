@@ -38,132 +38,76 @@
 
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
     
-    /* Skill Bars */
-    .skill-container { margin-bottom: 20px; }
-    .skill-name { display: flex; justify-content: space-between; margin-bottom: 8px; font-weight: 500; }
-    .bar-bg { background: rgba(156, 163, 175, 0.1); height: 10px; border-radius: 10px; overflow: hidden; }
-    .bar-fill { height: 100%; background: var(--accent); border-radius: 10px; transition: width 1.5s ease-in-out; }
+   /* --- Modern Skills Section (Matching Expertise) --- */
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
 
-    /* Education Blocks */
-    .edu-block { padding: 15px 0; border-bottom: 1px solid rgba(156, 163, 175, 0.1); }
-    .edu-block:last-child { border-bottom: none; }
-    .edu-tag { font-size: 0.75rem; background: var(--accent); color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-bottom: 8px; display: inline-block; }
+    .skill-pill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--card); /* Matches your Expertise/About boxes */
+        color: var(--text);
+        border: 1px solid rgba(156, 163, 175, 0.2);
+        padding: 12px 22px;
+        border-radius: 12px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
 
-    #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 1000; padding: 10px 15px; cursor: pointer; border-radius: 30px; border: 1px solid var(--accent); background: var(--card); color: var(--text); font-weight: 600; }
-    .typing { border-right: 2px solid var(--accent); white-space: nowrap; }
-    footer { text-align: center; padding: 40px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid rgba(156,163,175,0.1); }
+    .skill-pill i {
+        font-size: 1.2rem;
+        color: var(--accent); /* Matches your Expertise blue */
+    }
 
-    /* Styling for the new Quick Contact section below CV button */
-.quick-contact {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px; /* Spacing between icons */
-}
+    .skill-pill:hover {
+        transform: translateY(-5px);
+        border-color: var(--accent);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
 
-.quick-contact a {
-    font-size: 1.6rem;
-    color: inherit; /* Matches your current text color (Black or White) */
-    text-decoration: none;
-    transition: all 0.3s ease;
-    opacity: 0.8;
-}
+    /* --- Certification & General Card Fix (Fixes Deloitte) --- */
+    /* Ensure all boxes use var(--card) so they switch with the theme */
+    .about-box, .motion-card, .skill-pill, .cert-card {
+        background: var(--card) !important;
+        color: var(--text) !important;
+    }
 
-/* Hover effects for each platform */
-.quick-contact a:hover {
-    opacity: 1;
-    transform: translateY(-5px);
-}
-
-.quick-contact .fa-envelope:hover { color: #EA4335; }   /* Gmail Red */
-.quick-contact .fa-linkedin:hover { color: #0077B5; }   /* LinkedIn Blue */
-.quick-contact .fa-github:hover { color: #6e5494; }     /* GitHub Purple */
-.quick-contact .fa-whatsapp:hover { color: #25D366; }   /* WhatsApp Green */
-
-/* Mobile adjustment */
-@media (max-width: 768px) {
+    /* --- Quick Contact Icons --- */
     .quick-contact {
-        gap: 20px;
+        margin-top: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
     }
+
     .quick-contact a {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        color: var(--text);
+        text-decoration: none;
+        transition: all 0.3s ease;
+        opacity: 0.8;
     }
-}
 
-    /* Skills Section - Pill Design */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
-    padding: 20px 0;
-}
+    .quick-contact a:hover {
+        opacity: 1;
+        transform: translateY(-5px);
+        color: var(--accent);
+    }
 
-.skill-tag {
-    background-color: rgba(0, 123, 255, 0.1); /* Light blue tint */
-    color: #007bff; /* Primary blue */
-    border: 1px solid rgba(0, 123, 255, 0.3);
-    padding: 8px 18px;
-    border-radius: 50px; /* Makes it a pill shape */
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.skill-tag:hover {
-    background-color: #007bff;
-    color: #ffffff;
-    transform: translateY(-3px);
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
-}
-
-/* Dark Mode adjustment if your site uses a dark background */
-body.dark-mode .skill-tag {
-    background-color: rgba(255, 255, 255, 0.05);
-    color: #f8f9fa;
-    border-color: rgba(255, 255, 255, 0.2);
-}
-    /* Modern Skill Pills with Icons */
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
-}
-
-.skill-pill {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: var(--bg-secondary, #f8f9fa); /* Uses your theme's secondary bg */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    border-radius: 12px;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-.skill-pill i {
-    font-size: 1.2rem;
-    color: #27abe8 /* Professional blue for icons */
-}
-
-.skill-pill:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0,123,255,0.2);
-    border-color: #27abe8;
-}
-
-/* Dark Mode adjustment */
-body.dark-mode .skill-pill {
-    background: #2d2d2d;
-    border-color: #444;
-    color: #fff;
-}
-  </style>
+    /* Mobile adjustment */
+    @media (max-width: 768px) {
+        .quick-contact { gap: 20px; }
+        .quick-contact a { font-size: 1.4rem; }
+    }
+</style>
 </head>
 <body>
 
